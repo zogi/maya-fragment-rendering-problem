@@ -1,0 +1,30 @@
+<fragment_graph  name="TestFragment" ref="TestFragment" class="FragmentGraph" version="1.0">
+    <fragments>
+        <fragment_ref name="blinn_1" ref="mayaBlinnSurface" />
+
+        <fragment_ref name="checker_1mayaTextureOutputTooutColor1" ref="mayaTextureOutputTooutColor" />
+        <fragment_ref name="checker_1" ref="mayaChecker" />
+
+    </fragments>
+    <connections>
+        <connect from="checker_1mayaTextureOutputTooutColor1.outColor" to="blinn_1.color" name="color" />
+        <connect from="checker_1.mayaTextureOutput" to="checker_1mayaTextureOutputTooutColor1.input" name="input" />
+    </connections>
+    <properties>
+        <float4x4  name="ViewProj" ref="blinn_1.ViewProj" semantic="viewprojection" />
+
+        <float3  name="Pw" ref="blinn_1.Pw" semantic="Pw" flags="varyingInputParam" />
+        <float3  name="Nw" ref="blinn_1.Nw" semantic="Nw" flags="varyingInputParam" />
+        <float3  name="Vw" ref="blinn_1.Vw" semantic="Vw" flags="varyingInputParam" />
+
+        <float3  name="Lw" ref="blinn_1.Lw" />
+        <float3  name="HLw" ref="blinn_1.HLw" />
+        <float3  name="diffuseI" ref="blinn_1.diffuseI" />
+        <float3  name="specularI" ref="blinn_1.specularI" />
+        <float3  name="ambientIn" ref="blinn_1.ambientIn" />
+    </properties>
+    <values/>
+    <outputs>
+        <struct name="mayaSurfaceShaderOutput" ref="blinn_1.mayaSurfaceShaderOutput" />
+    </outputs>
+</fragment_graph>
